@@ -3,6 +3,8 @@ const app = express();
 
 const morgan = require("morgan");
 
+const port = process.env.PORT || 3000;
+
 app.use(morgan('dev'));
 
 app.get("/", (req, res) => {
@@ -10,6 +12,6 @@ app.get("/", (req, res) => {
     res.send("OK");
 });
 
-app.listen(3000, () => {
+app.listen(port, () => {
     console.log("Server running");
 });
